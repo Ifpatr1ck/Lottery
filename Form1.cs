@@ -21,7 +21,7 @@ namespace Lottery
         Random rand = new Random();
         int[] Ticket;
         bool ActiveCredit = false;
-        int balance = 1000, win = 0,count = 0, WinningField = 0, debt = 0;
+        int balance = 1000, win = 0,lose = 0,count = 0, WinningField = 0, debt = 0;
         void result()
         {
             Bu11.Text = (Ticket[0] == 1) ? "W" : "";
@@ -51,6 +51,8 @@ namespace Lottery
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            ActiveCredit = false;
+            debt = 0;
             balance = 1000;
             ControlGame.Visible = false;
             Bu11.Visible = Bu12.Visible = Bu21.Visible = Bu22.Visible = false;
@@ -66,6 +68,40 @@ namespace Lottery
             ScoreCount.Visible = false;
 
         }
+
+        private void PlayGambilingMode_Click(object sender, EventArgs e)
+        {
+            PlayNoGambilingMode.Enabled = false;
+            SelectedStrategy2.Text = "Азартный режим";
+            LuckyGameCount2.Text = "----------------------------------------";
+            NoLuckyGameCount2.Text = "----------------------------------------";
+            Income2.Text = "----------------------------------------";
+            PercentWinning2.Text = "----------------------------------------";
+
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            PlayGambilingMode.Enabled = true;
+            PlayNoGambilingMode.Enabled = true;
+            SelectedStrategy2.Text = "----------------------------------------";
+            LuckyGameCount2.Text = "----------------------------------------";
+            NoLuckyGameCount2.Text = "----------------------------------------";
+            Income2.Text = "----------------------------------------";
+            PercentWinning2.Text = "----------------------------------------";
+        }
+
+        private void PlayNoGambilingMode_Click(object sender, EventArgs e)
+        {
+            PlayGambilingMode.Enabled = false;
+            SelectedStrategy2.Text = "Не азартный режим";
+            LuckyGameCount2.Text = "----------------------------------------";
+            NoLuckyGameCount2.Text = "----------------------------------------";
+            Income2.Text = "----------------------------------------";
+            PercentWinning2.Text = "----------------------------------------";
+
+        }
+
         private void CreditButton_Click(object sender, EventArgs e)
         {
             CreditButton.Visible = false;

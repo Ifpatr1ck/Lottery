@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.CreditButton = new System.Windows.Forms.Button();
             this.ControlGame = new System.Windows.Forms.CheckBox();
             this.ScoreCount = new System.Windows.Forms.Label();
             this.ScoreText = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.PickUpButton = new System.Windows.Forms.Button();
             this.BuyTicketButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CreditButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.StartGame = new System.Windows.Forms.Button();
             this.FAQButton = new System.Windows.Forms.Button();
@@ -47,9 +47,29 @@
             this.Bu22 = new System.Windows.Forms.Button();
             this.Bu11 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.PercentWinning2 = new System.Windows.Forms.Label();
+            this.Income2 = new System.Windows.Forms.Label();
+            this.NoLuckyGameCount2 = new System.Windows.Forms.Label();
+            this.LuckyGameCount2 = new System.Windows.Forms.Label();
+            this.SelectedStrategy2 = new System.Windows.Forms.Label();
+            this.SelectedStrategy1 = new System.Windows.Forms.Label();
+            this.NoLuckyGameCount1 = new System.Windows.Forms.Label();
+            this.LuckyGameCount1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PlayNoGambilingMode = new System.Windows.Forms.Button();
+            this.PercentWinning1 = new System.Windows.Forms.Label();
+            this.Income1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.Reset = new System.Windows.Forms.Button();
+            this.PlayGambilingMode = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -81,6 +101,18 @@
             this.tabPage1.Size = new System.Drawing.Size(326, 285);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Лотерея";
+            // 
+            // CreditButton
+            // 
+            this.CreditButton.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
+            this.CreditButton.Location = new System.Drawing.Point(100, 213);
+            this.CreditButton.Name = "CreditButton";
+            this.CreditButton.Size = new System.Drawing.Size(120, 38);
+            this.CreditButton.TabIndex = 11;
+            this.CreditButton.Text = "Взять кредит";
+            this.CreditButton.UseVisualStyleBackColor = true;
+            this.CreditButton.Visible = false;
+            this.CreditButton.Click += new System.EventHandler(this.CreditButton_Click);
             // 
             // ControlGame
             // 
@@ -179,18 +211,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // CreditButton
-            // 
-            this.CreditButton.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
-            this.CreditButton.Location = new System.Drawing.Point(100, 213);
-            this.CreditButton.Name = "CreditButton";
-            this.CreditButton.Size = new System.Drawing.Size(120, 38);
-            this.CreditButton.TabIndex = 11;
-            this.CreditButton.Text = "Взять кредит";
-            this.CreditButton.UseVisualStyleBackColor = true;
-            this.CreditButton.Visible = false;
-            this.CreditButton.Click += new System.EventHandler(this.CreditButton_Click);
-            // 
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
@@ -269,6 +289,24 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.PercentWinning2);
+            this.tabPage2.Controls.Add(this.Income2);
+            this.tabPage2.Controls.Add(this.NoLuckyGameCount2);
+            this.tabPage2.Controls.Add(this.LuckyGameCount2);
+            this.tabPage2.Controls.Add(this.SelectedStrategy2);
+            this.tabPage2.Controls.Add(this.SelectedStrategy1);
+            this.tabPage2.Controls.Add(this.NoLuckyGameCount1);
+            this.tabPage2.Controls.Add(this.LuckyGameCount1);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.PlayNoGambilingMode);
+            this.tabPage2.Controls.Add(this.PercentWinning1);
+            this.tabPage2.Controls.Add(this.Income1);
+            this.tabPage2.Controls.Add(this.progressBar1);
+            this.tabPage2.Controls.Add(this.numericUpDown1);
+            this.tabPage2.Controls.Add(this.Reset);
+            this.tabPage2.Controls.Add(this.PlayGambilingMode);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -276,6 +314,167 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Анализ";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // PercentWinning2
+            // 
+            this.PercentWinning2.AutoSize = true;
+            this.PercentWinning2.Location = new System.Drawing.Point(176, 209);
+            this.PercentWinning2.Name = "PercentWinning2";
+            this.PercentWinning2.Size = new System.Drawing.Size(127, 13);
+            this.PercentWinning2.TabIndex = 17;
+            this.PercentWinning2.Text = "----------------------------------------";
+            // 
+            // Income2
+            // 
+            this.Income2.AutoSize = true;
+            this.Income2.Location = new System.Drawing.Point(176, 196);
+            this.Income2.Name = "Income2";
+            this.Income2.Size = new System.Drawing.Size(127, 13);
+            this.Income2.TabIndex = 16;
+            this.Income2.Text = "----------------------------------------";
+            // 
+            // NoLuckyGameCount2
+            // 
+            this.NoLuckyGameCount2.AutoSize = true;
+            this.NoLuckyGameCount2.Location = new System.Drawing.Point(176, 183);
+            this.NoLuckyGameCount2.Name = "NoLuckyGameCount2";
+            this.NoLuckyGameCount2.Size = new System.Drawing.Size(127, 13);
+            this.NoLuckyGameCount2.TabIndex = 15;
+            this.NoLuckyGameCount2.Text = "----------------------------------------";
+            // 
+            // LuckyGameCount2
+            // 
+            this.LuckyGameCount2.AutoSize = true;
+            this.LuckyGameCount2.Location = new System.Drawing.Point(176, 170);
+            this.LuckyGameCount2.Name = "LuckyGameCount2";
+            this.LuckyGameCount2.Size = new System.Drawing.Size(127, 13);
+            this.LuckyGameCount2.TabIndex = 14;
+            this.LuckyGameCount2.Text = "----------------------------------------";
+            // 
+            // SelectedStrategy2
+            // 
+            this.SelectedStrategy2.AutoSize = true;
+            this.SelectedStrategy2.Location = new System.Drawing.Point(176, 157);
+            this.SelectedStrategy2.Name = "SelectedStrategy2";
+            this.SelectedStrategy2.Size = new System.Drawing.Size(127, 13);
+            this.SelectedStrategy2.TabIndex = 13;
+            this.SelectedStrategy2.Text = "----------------------------------------";
+            // 
+            // SelectedStrategy1
+            // 
+            this.SelectedStrategy1.AutoSize = true;
+            this.SelectedStrategy1.Location = new System.Drawing.Point(28, 157);
+            this.SelectedStrategy1.Name = "SelectedStrategy1";
+            this.SelectedStrategy1.Size = new System.Drawing.Size(118, 13);
+            this.SelectedStrategy1.TabIndex = 12;
+            this.SelectedStrategy1.Text = "Выбранная стратегия";
+            // 
+            // NoLuckyGameCount1
+            // 
+            this.NoLuckyGameCount1.AutoSize = true;
+            this.NoLuckyGameCount1.Location = new System.Drawing.Point(28, 183);
+            this.NoLuckyGameCount1.Name = "NoLuckyGameCount1";
+            this.NoLuckyGameCount1.Size = new System.Drawing.Size(120, 13);
+            this.NoLuckyGameCount1.TabIndex = 11;
+            this.NoLuckyGameCount1.Text = "Кол-во не удачных игр";
+            // 
+            // LuckyGameCount1
+            // 
+            this.LuckyGameCount1.AutoSize = true;
+            this.LuckyGameCount1.Location = new System.Drawing.Point(28, 170);
+            this.LuckyGameCount1.Name = "LuckyGameCount1";
+            this.LuckyGameCount1.Size = new System.Drawing.Size(105, 13);
+            this.LuckyGameCount1.TabIndex = 10;
+            this.LuckyGameCount1.Text = "Кол-во удачных игр";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Кол-во игр";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(193, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Не азартная стратегия";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Азартная стратегия";
+            // 
+            // PlayNoGambilingMode
+            // 
+            this.PlayNoGambilingMode.Location = new System.Drawing.Point(203, 84);
+            this.PlayNoGambilingMode.Name = "PlayNoGambilingMode";
+            this.PlayNoGambilingMode.Size = new System.Drawing.Size(91, 23);
+            this.PlayNoGambilingMode.TabIndex = 6;
+            this.PlayNoGambilingMode.Text = "Сыграть";
+            this.PlayNoGambilingMode.UseVisualStyleBackColor = true;
+            this.PlayNoGambilingMode.Click += new System.EventHandler(this.PlayNoGambilingMode_Click);
+            // 
+            // PercentWinning1
+            // 
+            this.PercentWinning1.AutoSize = true;
+            this.PercentWinning1.Location = new System.Drawing.Point(28, 209);
+            this.PercentWinning1.Name = "PercentWinning1";
+            this.PercentWinning1.Size = new System.Drawing.Size(90, 13);
+            this.PercentWinning1.TabIndex = 5;
+            this.PercentWinning1.Text = "Доля выигрыша";
+            // 
+            // Income1
+            // 
+            this.Income1.AutoSize = true;
+            this.Income1.Location = new System.Drawing.Point(28, 196);
+            this.Income1.Name = "Income1";
+            this.Income1.Size = new System.Drawing.Size(39, 13);
+            this.Income1.TabIndex = 4;
+            this.Income1.Text = "Доход";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(31, 113);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(263, 23);
+            this.progressBar1.TabIndex = 3;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(31, 30);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 2;
+            // 
+            // Reset
+            // 
+            this.Reset.Location = new System.Drawing.Point(130, 256);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(65, 23);
+            this.Reset.TabIndex = 1;
+            this.Reset.Text = "Сброс";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // PlayGambilingMode
+            // 
+            this.PlayGambilingMode.Location = new System.Drawing.Point(31, 84);
+            this.PlayGambilingMode.Name = "PlayGambilingMode";
+            this.PlayGambilingMode.Size = new System.Drawing.Size(91, 23);
+            this.PlayGambilingMode.TabIndex = 0;
+            this.PlayGambilingMode.Text = "Сыграть";
+            this.PlayGambilingMode.UseVisualStyleBackColor = true;
+            this.PlayGambilingMode.Click += new System.EventHandler(this.PlayGambilingMode_Click);
             // 
             // Form1
             // 
@@ -289,6 +488,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,13 +509,31 @@
         private System.Windows.Forms.Button BuyTicketButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Button FAQButton;
         private System.Windows.Forms.Button StartGame;
         private System.Windows.Forms.Label NameOfGame;
         private System.Windows.Forms.Label ScoreCount;
         private System.Windows.Forms.Label ScoreText;
         private System.Windows.Forms.CheckBox ControlGame;
         private System.Windows.Forms.Button CreditButton;
+        private System.Windows.Forms.Button FAQButton;
+        private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.Button PlayGambilingMode;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label Income1;
+        private System.Windows.Forms.Label PercentWinning2;
+        private System.Windows.Forms.Label Income2;
+        private System.Windows.Forms.Label NoLuckyGameCount2;
+        private System.Windows.Forms.Label LuckyGameCount2;
+        private System.Windows.Forms.Label SelectedStrategy2;
+        private System.Windows.Forms.Label SelectedStrategy1;
+        private System.Windows.Forms.Label NoLuckyGameCount1;
+        private System.Windows.Forms.Label LuckyGameCount1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button PlayNoGambilingMode;
+        private System.Windows.Forms.Label PercentWinning1;
     }
 }
 
