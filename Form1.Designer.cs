@@ -65,6 +65,9 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.Reset = new System.Windows.Forms.Button();
             this.PlayGambilingMode = new System.Windows.Forms.Button();
+            this.AttensionText1 = new System.Windows.Forms.Label();
+            this.AttensionText2 = new System.Windows.Forms.Label();
+            this.AttensionText3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,6 +98,9 @@
             this.tabPage1.Controls.Add(this.PickUpButton);
             this.tabPage1.Controls.Add(this.BuyTicketButton);
             this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.AttensionText3);
+            this.tabPage1.Controls.Add(this.AttensionText2);
+            this.tabPage1.Controls.Add(this.AttensionText1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -105,9 +111,9 @@
             // CreditButton
             // 
             this.CreditButton.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
-            this.CreditButton.Location = new System.Drawing.Point(100, 213);
+            this.CreditButton.Location = new System.Drawing.Point(229, 178);
             this.CreditButton.Name = "CreditButton";
-            this.CreditButton.Size = new System.Drawing.Size(120, 38);
+            this.CreditButton.Size = new System.Drawing.Size(86, 42);
             this.CreditButton.TabIndex = 11;
             this.CreditButton.Text = "Взять кредит";
             this.CreditButton.UseVisualStyleBackColor = true;
@@ -124,6 +130,7 @@
             this.ControlGame.Text = "Контрольный режим";
             this.ControlGame.UseVisualStyleBackColor = true;
             this.ControlGame.Visible = false;
+            this.ControlGame.CheckedChanged += new System.EventHandler(this.ControlGame_CheckedChanged);
             // 
             // ScoreCount
             // 
@@ -171,11 +178,10 @@
             // 
             // PickUpButton
             // 
-            this.PickUpButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PickUpButton.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
-            this.PickUpButton.Location = new System.Drawing.Point(3, 257);
+            this.PickUpButton.Location = new System.Drawing.Point(225, 147);
             this.PickUpButton.Name = "PickUpButton";
-            this.PickUpButton.Size = new System.Drawing.Size(320, 25);
+            this.PickUpButton.Size = new System.Drawing.Size(98, 25);
             this.PickUpButton.TabIndex = 2;
             this.PickUpButton.Text = "Забрать";
             this.PickUpButton.UseVisualStyleBackColor = true;
@@ -242,6 +248,7 @@
             this.FAQButton.TabIndex = 4;
             this.FAQButton.Text = "FAQ";
             this.FAQButton.UseVisualStyleBackColor = true;
+            this.FAQButton.Click += new System.EventHandler(this.FAQButton_Click);
             // 
             // Bu12
             // 
@@ -452,6 +459,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(31, 30);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 2;
@@ -475,6 +487,39 @@
             this.PlayGambilingMode.Text = "Сыграть";
             this.PlayGambilingMode.UseVisualStyleBackColor = true;
             this.PlayGambilingMode.Click += new System.EventHandler(this.PlayGambilingMode_Click);
+            // 
+            // AttensionText1
+            // 
+            this.AttensionText1.AutoSize = true;
+            this.AttensionText1.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
+            this.AttensionText1.Location = new System.Drawing.Point(18, 224);
+            this.AttensionText1.Name = "AttensionText1";
+            this.AttensionText1.Size = new System.Drawing.Size(288, 17);
+            this.AttensionText1.TabIndex = 12;
+            this.AttensionText1.Text = "Внимание! Включен контрольный режим";
+            this.AttensionText1.Visible = false;
+            // 
+            // AttensionText2
+            // 
+            this.AttensionText2.AutoSize = true;
+            this.AttensionText2.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
+            this.AttensionText2.Location = new System.Drawing.Point(7, 241);
+            this.AttensionText2.Name = "AttensionText2";
+            this.AttensionText2.Size = new System.Drawing.Size(313, 17);
+            this.AttensionText2.TabIndex = 13;
+            this.AttensionText2.Text = "Ведите себя максимально правдоподобно";
+            this.AttensionText2.Visible = false;
+            // 
+            // AttensionText3
+            // 
+            this.AttensionText3.AutoSize = true;
+            this.AttensionText3.Font = new System.Drawing.Font("Comfortaa", 10F, System.Drawing.FontStyle.Bold);
+            this.AttensionText3.Location = new System.Drawing.Point(7, 257);
+            this.AttensionText3.Name = "AttensionText3";
+            this.AttensionText3.Size = new System.Drawing.Size(321, 17);
+            this.AttensionText3.TabIndex = 14;
+            this.AttensionText3.Text = "Результат следующей игры будет записан";
+            this.AttensionText3.Visible = false;
             // 
             // Form1
             // 
@@ -534,6 +579,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button PlayNoGambilingMode;
         private System.Windows.Forms.Label PercentWinning1;
+        private System.Windows.Forms.Label AttensionText3;
+        private System.Windows.Forms.Label AttensionText2;
+        private System.Windows.Forms.Label AttensionText1;
     }
 }
 
