@@ -199,7 +199,7 @@ namespace Lottery
             Probability = (double)LuckyGame / GameCount;
             PlayNoGambilingMode.Enabled = false;
             System.Threading.Thread.Sleep(150);
-            SelectedStrategy2.Text = "Азартный режим";
+            SelectedStrategy2.Text = "Не азартный режим";
             LuckyGameCount2.Text = "" + LuckyGame;
             NoLuckyGameCount2.Text = "" + NoLuckyGame;
             Income2.Text = "" + GambilingMoney;
@@ -224,7 +224,6 @@ namespace Lottery
                 ControlGameCount++;
                 text = "Всего игр: " + ControlGameCount + ";\nПоражений всего: " + lose + ";\nМалых побед всего: " + MicroWin + ";\nБольших побед: " + MacroWin + ";\nДоход: " + money;
                 writer.Write(text);
-                MessageBox.Show("Записано");
                 writer.Close();
 
                 StreamWriter writer1 = new StreamWriter(FileName1);
@@ -365,7 +364,6 @@ namespace Lottery
                         ControlGameCount++;
                         text = "Всего игр: " + ControlGameCount + ";\nПоражений всего: " + lose + ";\nМалых побед всего: " + MicroWin + ";\nБольших побед: " + MacroWin + ";\nДоход: " + money;
                         writer.Write(text);
-                        MessageBox.Show("Записано");
                         writer.Close();
 
                         StreamWriter writer1 = new StreamWriter(FileName1);
