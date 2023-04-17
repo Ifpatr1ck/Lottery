@@ -33,6 +33,12 @@ namespace Lottery
         double Probability;
         int balance = 1000, count = 0, WinningField = 0, debt = 0, GameCount = 0, GambilingMoney = 0, LuckyGame = 0, NoLuckyGame = 0, FirstReuslt,SecondResult;
         int MicroWin, MacroWin, lose,money,ControlGameCount;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/ifpatrick");
+        }
+
         void result()
         {
             Bu11.Text = (Ticket[0] == 1) ? "W" : "";
@@ -64,6 +70,7 @@ namespace Lottery
         }
         private void StartGame_Click(object sender, EventArgs e)
         {
+            button1.Visible = false;
             ControlGame.Visible = true;
             BuyTicketButton.Enabled = true;
             ScoreText.Visible = true;
@@ -71,7 +78,6 @@ namespace Lottery
             ScoreCount.Visible = true;
             NameOfGame.Visible = false;
             groupBox1.Visible = false;
-            FAQButton.Visible = false;
             ExitButton.Visible = false;
             CancelButton.Visible = true;
             BuyTicketButton.Visible = true;
@@ -90,6 +96,7 @@ namespace Lottery
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            button1.Visible = true;
             ControlGame.Checked = false;
             AttensionText1.Visible = false;
             AttensionText2.Visible = false;
@@ -102,14 +109,12 @@ namespace Lottery
             groupBox1.Enabled = true;
             NameOfGame.Visible = true;
             groupBox1.Visible = true;
-            FAQButton.Visible = true;
             ExitButton.Visible = true;
             CancelButton.Visible = false;
             BuyTicketButton.Visible = false;
             StartGame.Visible = true;
             ScoreText.Visible = false;
             ScoreCount.Visible = false;
-
         }
         private void PlayGambilingMode_Click(object sender, EventArgs e)
         {
@@ -154,10 +159,6 @@ namespace Lottery
             GambilingMoney = 0;
             LuckyGame = 0;
             NoLuckyGame = 0;
-        }
-        private void FAQButton_Click(object sender, EventArgs e)
-        {
-
         }
         private void ControlGame_CheckedChanged(object sender, EventArgs e)
         {
