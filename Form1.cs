@@ -22,7 +22,6 @@ namespace Lottery
             InitializeComponent();
             startingGame();
         }
-
         string[] lines = new string[5];
         int[] arr = new int[5];
         Random rand = new Random();
@@ -31,7 +30,8 @@ namespace Lottery
         static string FileName = "C:\\Users\\Ra40k\\source\\repos\\Lottery\\DB.txt";
         static string FileName1 = "C:\\Users\\Ra40k\\source\\repos\\Lottery\\GameStatistics.txt";
         bool ActiveCredit = false, ControlGameMODE = false, FIRSTgame = true;
-        int balance = 1000, count = 0, WinningField = 0, debt = 0;
+        double Probability;
+        int balance = 1000, count = 0, WinningField = 0, debt = 0, GameCount = 0, GambilingMoney = 0, LuckyGame = 0, NoLuckyGame = 0, FirstReuslt,SecondResult;
         int MicroWin, MacroWin, lose,money,ControlGameCount;
         void result()
         {
@@ -114,15 +114,35 @@ namespace Lottery
         private void PlayGambilingMode_Click(object sender, EventArgs e)
         {
             PlayNoGambilingMode.Enabled = false;
+            GameCount = (int)numericUpDown1.Value;
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = (int)numericUpDown1.Value;
+            progressBar1.Step = 1;
+            for (int i = 0; i < GameCount; i++)
+            {
+                progressBar1.PerformStep();
+                GambilingMoney -= 100;
+                FirstReuslt = rand.Next(0, 2);
+                SecondResult = rand.Next(0, 2);
+                if (FirstReuslt == 0 && SecondResult == 0)
+                {
+                    GambilingMoney += 500;
+                    LuckyGame++;
+                }
+                else NoLuckyGame++;
+            }
+            Probability = (double)LuckyGame / GameCount;
+            PlayNoGambilingMode.Enabled = false;
+            System.Threading.Thread.Sleep(150);
             SelectedStrategy2.Text = "Азартный режим";
-            LuckyGameCount2.Text = "----------------------------------------";
-            NoLuckyGameCount2.Text = "----------------------------------------";
-            Income2.Text = "----------------------------------------";
-            PercentWinning2.Text = "----------------------------------------";
-
+            LuckyGameCount2.Text = "" + LuckyGame;
+            NoLuckyGameCount2.Text = "" + NoLuckyGame;
+            Income2.Text = "" + GambilingMoney;
+            PercentWinning2.Text = "" + Probability;
         }
         private void Reset_Click(object sender, EventArgs e)
         {
+            progressBar1.Value = 0;
             PlayGambilingMode.Enabled = true;
             PlayNoGambilingMode.Enabled = true;
             SelectedStrategy2.Text = "----------------------------------------";
@@ -130,6 +150,10 @@ namespace Lottery
             NoLuckyGameCount2.Text = "----------------------------------------";
             Income2.Text = "----------------------------------------";
             PercentWinning2.Text = "----------------------------------------";
+            GameCount = 0;
+            GambilingMoney = 0;
+            LuckyGame = 0;
+            NoLuckyGame = 0;
         }
         private void FAQButton_Click(object sender, EventArgs e)
         {
@@ -155,12 +179,30 @@ namespace Lottery
         private void PlayNoGambilingMode_Click(object sender, EventArgs e)
         {
             PlayGambilingMode.Enabled = false;
-            SelectedStrategy2.Text = "Не азартный режим";
-            LuckyGameCount2.Text = "----------------------------------------";
-            NoLuckyGameCount2.Text = "----------------------------------------";
-            Income2.Text = "----------------------------------------";
-            PercentWinning2.Text = "----------------------------------------";
-
+            GameCount = (int)numericUpDown1.Value;
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = (int)numericUpDown1.Value;
+            progressBar1.Step = 1;
+            for (int i = 0; i < GameCount; i++)
+            {
+                progressBar1.PerformStep();
+                GambilingMoney -= 100;
+                FirstReuslt = rand.Next(0, 2);
+                if (FirstReuslt == 0)
+                {
+                    GambilingMoney += 150;
+                    LuckyGame++;
+                }
+                else NoLuckyGame++;
+            }
+            Probability = (double)LuckyGame / GameCount;
+            PlayNoGambilingMode.Enabled = false;
+            System.Threading.Thread.Sleep(150);
+            SelectedStrategy2.Text = "Азартный режим";
+            LuckyGameCount2.Text = "" + LuckyGame;
+            NoLuckyGameCount2.Text = "" + NoLuckyGame;
+            Income2.Text = "" + GambilingMoney;
+            PercentWinning2.Text = "" + Probability;
         }
         private void CreditButton_Click(object sender, EventArgs e)
         {
