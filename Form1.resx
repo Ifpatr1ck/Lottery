@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Данный раздел предназначен для объяснения работы программы. Игра подразумевает собой лотерею билета с 4 скрытых игровыми полями. В игре присутствует несколько режимов игры: обычный, контрольный, залповый. </value>
+  </data>
 </root>
